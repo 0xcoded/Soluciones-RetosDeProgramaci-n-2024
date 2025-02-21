@@ -1,2 +1,2 @@
-http://mouredev.pro\n
+http://mouredev.pro
 http://retosdeprogramacion.com
