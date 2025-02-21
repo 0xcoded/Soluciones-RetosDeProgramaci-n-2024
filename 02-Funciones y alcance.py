@@ -23,16 +23,42 @@ def ret_args(name):
 
 def default_values(name,surname="Unknown"):
     print(f"Hola, {name} {surname}")
+    
+def multiple_return(name,surname):
+    return name,surname
+
+def multiple_args(*names):
+    for name in names:
+        print(name)
 
 no_ret_no_args()
 print(f"OUTPUT función: {ret_no_args()}")
 print(ret_args("david"))
 default_values("David")     #El segundo argumento, si no se define, toma el valor declarado en la función
+name,surname = multiple_return("david","valls")
+print(name)
+print(surname)
+multiple_args("david","noelia","brais") #Está esperando multiples argumentos como un elemento iterable en la función ( *names )
 
+# Número variable de argumentos, clave:valor
+def key_value_function(**values):
+    for param, value in values.items():
+        print(f"El parámetro de la función {param} tiene el valor {value}")
+
+key_value_function(name="David",age="34",country="Spain")
 
 #Funciones del propio lenguaje
 print(len("DAVID"))
 print("DAVID".lower())
+
+# Multiples funciones
+def fun1():
+    def fun2():
+        print("Función 2")
+    print("Función 1, llamando a función 2 alojada dentro de la función 1")
+    fun2()
+    
+fun1()
 
 local_var = "Variable local"
 print(local_var)
@@ -62,14 +88,18 @@ print_global_var()
 '''
 
 def str_function_numbers(string1,string2):
+    count = 0
     for i in range(1,101):
         print(i)
         if i % 3 == 0 and not i % 5 == 0:
             print(string1)
         elif not i % 3 == 0 and i % 5 == 0:
             print(string2)
-        else:
+        elif i % 3 == 0 and not i % 5 == 0:
             print(string1 + string2)
-    return i
+        else:
+            print(i)
+            count += 1
+    return count
 
-print(f"Total de números analizados: {str_function_numbers("Hola ","Mundo")}")
+print(f"Total impresos: {str_function_numbers("Hola ","Mundo")}")
