@@ -22,7 +22,7 @@ def ret_args(name):
     return f"Hola, {name}"
 
 def default_values(name,surname="Unknown"):
-    print(f"Hola, {name}, {surname}")
+    print(f"Hola, {name} {surname}")
 
 no_ret_no_args()
 print(f"OUTPUT función: {ret_no_args()}")
