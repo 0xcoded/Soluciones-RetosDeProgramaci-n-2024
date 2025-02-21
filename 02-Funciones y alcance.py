@@ -11,7 +11,7 @@
  *
 '''
  
-#Funciones establecidas
+#Funciones establecidas por el usuario
 def no_ret_no_args():
      print("Hola Mundo!")
 
@@ -21,9 +21,14 @@ def ret_no_args():
 def ret_args(name):
     return f"Hola, {name}"
 
+def default_values(name,surname="Unknown"):
+    print(f"Hola, {name}, {surname}")
+
 no_ret_no_args()
 print(f"OUTPUT función: {ret_no_args()}")
 print(ret_args("david"))
+default_values("David")     #El segundo argumento, si no se define, toma el valor declarado en la función
+
 
 #Funciones del propio lenguaje
 print(len("DAVID"))
