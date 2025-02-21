@@ -42,8 +42,8 @@ multiple_args("david","noelia","brais") #Está esperando multiples argumentos co
 
 # Número variable de argumentos, clave:valor
 def key_value_function(**values):
-    for param, value in values.items():
-        print(f"El parámetro de la función {param} tiene el valor {value}")
+    for key, value in values.items():
+        print(f"El parámetro {key} tiene el valor {value}")
 
 key_value_function(name="David",age="34",country="Spain")
 
@@ -54,7 +54,7 @@ print("DAVID".lower())
 # Multiples funciones
 def fun1():
     def fun2():
-        print("Función 2")
+        print("Contenido de unción 2")
     print("Función 1, llamando a función 2 alojada dentro de la función 1")
     fun2()
     
@@ -95,7 +95,7 @@ def str_function_numbers(string1,string2):
             print(string1)
         elif not i % 3 == 0 and i % 5 == 0:
             print(string2)
-        elif i % 3 == 0 and not i % 5 == 0:
+        elif i % 3 == 0 and i % 5 == 0:
             print(string1 + string2)
         else:
             print(i)
